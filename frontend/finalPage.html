@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title></title>
+    <style>
+      </style>
+    
+</head>
+<body>
+ <main class = "page-container">
+    <div>
+        <p>Here a some link of instagram reels for you.</p>
+        <p>You can enjoy these in your free time.</p>
+    </div>
+    <div id="list-container">
+        <ul id="myList"></ul>
+    </div>
+    <div>
+        <p>I've also learned that you have feelings😍 for Meghna that to <em>wo wale</em>.</p>
+        <p>Unfortunately, it's not possible for me to help you pursue a relationship with her.</p>
+        <p>Instead I will like to gift you a Swiggy voucher so, that you could at least have a Meghna biryani 😉.</p>
+    </div>
+    <a href="#" class="btn btn--green" onclick="openModal()">click here for the voucher</a>
+
+    <div class="overlay" id="overlay" onclick="closeModal()"></div>
+<div class="modal" id="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div>This is just a dummy button though, for actual voucher you need to guess your santa correctly🫣!</div>
+</div>
+
+    
+ </main>
+</body>
+<script>
+    // Sample array of items
+    const myArray = [
+        'https://www.instagram.com/reel/CzBWN_Yxvf1/?igshid=MWZ5bHA4M2xud2lqaQ%3D%3D',
+        'https://www.instagram.com/reel/CxuC-43tMoz/?igshid=ZmJkeGV2MTRoZTFk', 
+        'https://www.instagram.com/reel/CzEnsoSodgg/?igshid=MmZxc3g1MHg1dXB0', 
+        'https://www.instagram.com/reel/CzIgKRlxCpW/?igshid=cWQ2aHY2MGp3Z3Z2', 
+        'https://www.instagram.com/reel/CzgQidKs87x/?igshid=MTc4MmM1YmI2Ng%3D%3D'
+    ];
+
+    function createListItems(array) {
+      // Get the ul element
+      const ulElement = document.getElementById('myList');
+
+      array.forEach(item => {
+        const liElement = document.createElement('li');
+        const anchorElement = document.createElement('a');
+
+        anchorElement.textContent = item;
+        anchorElement.href = item;
+
+        liElement.appendChild(anchorElement);
+        ulElement.appendChild(liElement);
+      });
+    }
+
+    createListItems(myArray);
+
+    function openModal() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('modal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  </script>
+
+</html>
